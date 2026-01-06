@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profileImg from '../assets/gerg.png'; // Adjust path if needed
+import profileImg from '../assets/Gerg.png'; // Adjust path if needed
 import { Linkedin, ArrowDown, Cog, Settings, Wrench } from 'lucide-react';
 
 export default function HeroSection() {
