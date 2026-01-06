@@ -23,7 +23,7 @@ const projectData = {
         title: 'Turbine Blade Design',
         // Cloudinary STL Link
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
-        image: 'https://images.unsplash.com/photo-1518709766631-a6a7f45921c3?w=600&q=80',
+        image: 'https://d2n4wb9orp1vta.cloudfront.net/cms/brand/CW/2020-CW/0920-cw-fod-ACTblade-drawing1.jpg;maxWidth=720',
         challenge: 'Create aerodynamically optimized turbine blade geometry for improved efficiency.',
         solution: 'Utilized surface modeling techniques and CFD-driven optimization to achieve 12% efficiency gain.',
         tags: ['CATIA', 'Surface Modeling', 'CFD'],
