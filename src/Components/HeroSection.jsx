@@ -106,9 +106,9 @@ export default function HeroSection() {
               className="grid grid-cols-3 gap-6 pt-8 border-t border-[#00416B]/10"
             >
               {[
-                { value: '8+', label: 'Years Experience' },
-                { value: '50+', label: 'Projects Completed' },
-                { value: '15+', label: 'Patents Filed' },
+                { value: '3', label: 'Engineering Positions Held' },
+                { value: '4+', label: 'Projects Completed' },
+                { value: '10+', label: 'Years Involved in Robotics' },
               ].map((stat, index) => (
                 <div key={index}>
                   <p className="text-3xl font-bold text-[#00416B]">{stat.value}</p>
