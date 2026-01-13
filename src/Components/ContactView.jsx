@@ -147,7 +147,7 @@ export default function ContactView() {
 
             {/* Services */}
             <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[#00416B]/5 border border-[#00416B]/5">
-            {/* <div className="bg-gradient-to-br from-[#00416B] to-[#00416B]/50 rounded-3xl p-8 border border-[#00416B]/5"> {/* Original 2 were: F1EAD6  */} */}
+              {/* <div className="bg-gradient-to-br from-[#00416B] to-[#00416B]/50 rounded-3xl p-8 border border-[#00416B]/5"> {/* Original 2 were: F1EAD6  */}
               <h3 className="text-xl font-bold text-[#00416B] mb-6">How I Can Help</h3>
               <ul className="space-y-3">
                 {[
