@@ -20,8 +20,7 @@ export default function ContactView() {
             Let's Work Together
           </h1>
           <p className="text-[#00416B]/70 max-w-2xl mx-auto text-lg">
-            Have a challenging engineering problem? I'd love to hear about it. 
-            Reach out and let's discuss how I can help bring your ideas to life.
+            Are you looking for an engineer intern? I'd love to hear about it!
           </p>
         </motion.div>
 
