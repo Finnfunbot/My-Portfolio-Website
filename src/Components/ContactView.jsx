@@ -136,26 +136,27 @@ export default function ContactView() {
                 </div>
                 <div className="flex items-center gap-4">
                   <Clock className="w-5 h-5 text-[#00416B]/60" />
-                  <span className="text-[#00416B]/80">Typical response time: 24-48 hours</span>
+                  <span className="text-[#00416B]/80">Typical response time: 6-48 hours</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Globe className="w-5 h-5 text-[#00416B]/60" />
-                  <span className="text-[#00416B]/80">Open to remote & hybrid opportunities</span>
+                  <span className="text-[#00416B]/80">Open to remote, hybrid, or on-site opportunities</span>
                 </div>
               </div>
             </div>
 
             {/* Services */}
-            <div className="bg-gradient-to-br from-[#F1EAD6] to-[#F1EAD6]/50 rounded-3xl p-8 border border-[#00416B]/5">
+            <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[#00416B]/5 border border-[#00416B]/5">
+            {/* <div className="bg-gradient-to-br from-[#00416B] to-[#00416B]/50 rounded-3xl p-8 border border-[#00416B]/5"> {/* Original 2 were: F1EAD6  */} */}
               <h3 className="text-xl font-bold text-[#00416B] mb-6">How I Can Help</h3>
               <ul className="space-y-3">
                 {[
-                  'Product Design & Development',
-                  'CAD Modeling & Documentation',
+                  'Lead Technical Sub-Teams',
+                  'Design High-Performance Mechanical Parts',
                   'Finite Element Analysis',
-                  'Prototyping & Manufacturing Support',
+                  'Prototype for Rapid Iteration',
                   'Design for Additive Manufacturing',
-                  'Technical Consulting',
+                  'Author Technical Documentation',
                 ].map((service, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <div className="w-2 h-2 rounded-full bg-[#00416B]" />
@@ -169,9 +170,8 @@ export default function ContactView() {
             <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[#00416B]/5 border border-[#00416B]/5">
               <h3 className="text-xl font-bold text-[#00416B] mb-4">Quick Message</h3>
               <p className="text-[#00416B]/70 mb-6">
-                For project inquiries, please include details about your timeline, 
-                budget range, and technical requirements. The more context you provide, 
-                the better I can assist you.
+                For internships or job opportunities, please reach out 
+                via email and I will get back to you soon.
               </p>
               <a
                 href="mailto:gregory@simonefamily.net?subject=Project%20Inquiry"
