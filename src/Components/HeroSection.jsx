@@ -63,9 +63,11 @@ export default function HeroSection() {
                 transition={{ delay: 0.4 }}
                 className="text-lg text-[#00416B]/70 max-w-lg leading-relaxed"
               >
-                Passionate mechanical engineer specializing in innovative design, 
-                precision manufacturing, and cutting-edge simulation. Transforming 
-                complex challenges into elegant, functional solutions.
+                As a Mechanical Engineering Honors student at UMass Amherst, 
+                I am combining mechanical design with computational intelligence 
+                to solve complex engineering problems. I am deeply passionate 
+                about Humanoid Robotics and am actively building the skillset to 
+                design optimized, autonomous machines.
               </motion.p>
             </div>
 
