@@ -117,7 +117,7 @@ export default function Navigation({ currentView, setCurrentView }) {
 
             {/* LinkedIn Icon */}
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/in/gregory-simone/"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-4 p-2.5 rounded-full bg-[#00416B]/10 text-[#00416B] hover:bg-[#00416B] hover:text-white transition-all duration-300"
