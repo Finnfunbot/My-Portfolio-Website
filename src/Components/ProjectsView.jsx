@@ -133,14 +133,6 @@ const projectData = {
         solution: 'Conducted modal analysis and random vibration response for launch qualification.',
         tags: ['ANSYS', 'Modal Analysis', 'Random Vibration'],
       },
-       {
-        id: 6,
-        title: 'Modal Vibration Study',
-        image: 'https://images.unsplash.com/photo-1504222490345-c075b6008014?w=600&q=80',
-        challenge: 'Characterize natural frequencies of satellite deployable antenna.',
-        solution: 'Conducted modal analysis and random vibration response for launch qualification.',
-        tags: ['ANSYS', 'Modal Analysis', 'Random Vibration'],
-      },
     ],
   },
 };
