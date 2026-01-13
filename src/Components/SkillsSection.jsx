@@ -13,60 +13,60 @@ import {
 
 const skills = [
   {
-    name: 'SolidWorks',
+    name: 'Solidworks',
     category: 'CAD',
-    level: 95,
+    level: 60,
     icon: Box,
     color: 'from-red-500 to-orange-500',
   },
   {
-    name: 'AutoCAD',
+    name: 'Creo Parametric',
     category: 'CAD',
-    level: 90,
+    level: 75,
     icon: PenTool,
     color: 'from-red-600 to-red-400',
   },
   {
     name: 'ANSYS',
-    category: 'Simulation',
-    level: 88,
+    category: 'FEA',
+    level: 53,
     icon: BarChart3,
     color: 'from-yellow-500 to-amber-500',
   },
   {
-    name: 'MATLAB',
-    category: 'Analysis',
-    level: 85,
-    icon: Cpu,
-    color: 'from-orange-500 to-red-500',
-  },
-  {
-    name: 'GD&T',
-    category: 'Standards',
-    level: 92,
+    name: 'Rapid Prototyping',
+    category: 'Prototyping',
+    level: 80,
     icon: Ruler,
     color: 'from-blue-500 to-cyan-500',
   },
   {
-    name: 'CATIA',
-    category: 'CAD',
-    level: 80,
+    name: '3D Printing',
+    category: 'Prototyping',
+    level: 94,
     icon: Layers,
     color: 'from-blue-600 to-indigo-500',
   },
   {
-    name: 'Abaqus',
-    category: 'FEA',
-    level: 82,
+    name: 'MATLAB',
+    category: 'Coding',
+    level: 65,
     icon: Target,
     color: 'from-purple-500 to-pink-500',
   },
   {
-    name: 'ISO Standards',
-    category: 'Quality',
-    level: 90,
+    name: 'Python',
+    category: 'Coding',
+    level: 58,
     icon: FileCheck,
     color: 'from-green-500 to-emerald-500',
+  },
+  {
+    name: 'Collaborative Work',
+    category: 'Analysis',
+    level: 88,
+    icon: Cpu,
+    color: 'from-orange-500 to-red-500',
   },
 ];
 
@@ -153,7 +153,7 @@ export default function SkillsSection() {
         >
           <p className="text-sm text-[#00416B]/60 mb-6">Also proficient in:</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['Creo', 'NX Siemens', 'Inventor', 'Fusion 360', 'Python', 'LabVIEW', 'Six Sigma', 'Lean Manufacturing'].map((skill) => (
+            {['Problem Solving', 'Circuitry', 'Communication', 'Arduino', 'Python', 'Teamwork'].map((skill) => (
               <span
                 key={skill}
                 className="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-[#00416B] shadow-md shadow-[#00416B]/5 border border-[#00416B]/5 hover:bg-[#00416B] hover:text-white transition-all duration-300 cursor-default"
