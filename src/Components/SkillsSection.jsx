@@ -153,7 +153,7 @@ export default function SkillsSection() {
         >
           <p className="text-sm text-[#00416B]/60 mb-6">Also proficient in:</p>
           <div className="flex flex-wrap justify-center gap-3">
-            {['Problem Solving', 'Circuitry', 'Communication', 'Arduino', 'Python', 'Teamwork'].map((skill) => (
+            {['Problem Solving', 'Circuitry', 'Communication', 'Arduino', 'Teamwork'].map((skill) => (
               <span
                 key={skill}
                 className="px-5 py-2.5 bg-white rounded-full text-sm font-medium text-[#00416B] shadow-md shadow-[#00416B]/5 border border-[#00416B]/5 hover:bg-[#00416B] hover:text-white transition-all duration-300 cursor-default"
