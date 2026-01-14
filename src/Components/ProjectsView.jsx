@@ -11,35 +11,45 @@ const projectData = {
     projects: [
       {
         id: 1,
-        title: 'Robotic Arm Assembly',
+        title: 'Interchangeable Lithophane Lightbox',
         modelUrl: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb', 
         image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&q=80',
-        challenge: 'Design a 6-DOF robotic arm with high precision repeatability for manufacturing applications.',
-        solution: 'Developed parametric SolidWorks model with integrated motion studies and interference detection.',
-        tags: ['SolidWorks', 'Motion Analysis', 'GD&T'],
+        context: 'Test',
+        challenge: 'Design a lightbox to display a lithophane portrait. Must be interchangeable, prevent light leakage from seemless openings.',
+        solution: 'Used Solidworks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
+        tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
       },
       {
         id: 2,
-        title: 'Turbine Blade Design',
+        title: 'Robotic Car',
         // Cloudinary STL Link
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
         image: 'https://d2n4wb9orp1vta.cloudfront.net/cms/brand/CW/2020-CW/0920-cw-fod-ACTblade-drawing1.jpg;maxWidth=720',
-        challenge: 'Create aerodynamically optimized turbine blade geometry for improved efficiency.',
-        solution: 'Utilized surface modeling techniques and CFD-driven optimization to achieve 12% efficiency gain.',
-        tags: ['CATIA', 'Surface Modeling', 'CFD'],
+        challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
+        solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, opa-mps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
+        tags: ['Circuitry', 'Problem Solving'],
       },
       {
         id: 3,
-        title: 'Electric Motor Housing',
+        title: 'Sun Tracking Solar Panel',
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765768811/mwt_b-type_a0ursy.glb',
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-        challenge: 'Design thermally efficient motor housing with integrated cooling channels.',
-        solution: 'Implemented conformal cooling passages and topology-optimized ribbing structure.',
-        tags: ['NX Siemens', 'Thermal Design', 'DFM'],
+        challenge: 'Design a handheld solar panel that tracks the movement of the sun to optimize energy harvesting efficiency.',
+        solution: 'Add light sensors on each corner of the solar panel to determine the orientation needed to face the sun. Used 2 degrees of freedom to allow proper movement of the solar panel to point towards the target.',
+        tags: ['Circuitry', 'Problem Solving', 'Coding', 'Teamwork'],
       },
       {
         id: 4,
-        title: 'Precision Gearbox',
+        title: 'Droid404',
+        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
+        image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
+        challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
+        solution: 'Worked for over 2 years for: level desgin, programming, graphic design, and publishing to Steam. ',
+        tags: ['Programming', 'Problem Solving', 'Graphic Design', 'Teamwork'],
+      },
+       {
+        id: 5,
+        title: 'Lunar Rover (WIP)',
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
         image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
         challenge: 'Model high-precision planetary gearbox for aerospace actuator.',
@@ -220,6 +230,12 @@ export default function ProjectsView({ category }) {
                     
                     <div className="space-y-6">
                         <div>
+                            <h3 className="text-sm font-bold uppercase text-[#00416B]/40 mb-2">The Context</h3>
+                            <p className="text-[#00416B]/80 leading-relaxed">
+                                {activeProject.context}
+                            </p>
+                        </div>
+                      <div>
                             <h3 className="text-sm font-bold uppercase text-[#00416B]/40 mb-2">The Challenge</h3>
                             <p className="text-[#00416B]/80 leading-relaxed">
                                 {activeProject.challenge}
@@ -235,7 +251,7 @@ export default function ProjectsView({ category }) {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-[#00416B]/5">
-                    <h3 className="text-sm font-bold uppercase text-[#00416B]/40 mb-3">Technologies Used</h3>
+                    <h3 className="text-sm font-bold uppercase text-[#00416B]/40 mb-3">Skills Used</h3>
                     <div className="flex flex-wrap gap-2">
                         {activeProject.tags.map((tag) => (
                             <span
