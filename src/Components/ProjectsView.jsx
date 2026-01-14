@@ -64,7 +64,7 @@ const projectData = {
   },
   electrical: {
     title: 'Electrical Projects',
-    description: 'Electrical projects',
+    // description: 'Electrical projects',
     icon: Cpu,
     projects: {
       {
