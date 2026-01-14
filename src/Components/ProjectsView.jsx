@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Box, Printer, Activity, MousePointer2, Info, ChevronRight } from 'lucide-react';
+import { Box, Printer, Activity, MousePointer2, Info, ChevronRight, Cpu, FolderOpen } from 'lucide-react';
 import ModelViewer from './ModelViewer';
 
 const projectData = {
@@ -65,7 +65,7 @@ const projectData = {
   electrical: {
     title: 'Electrical Projects',
     description: 'Electrical projects',
-    icon: Activity,
+    icon: Cpu,
     projects: {
       {
         id: 1,
@@ -90,7 +90,7 @@ const projectData = {
   },
   other: {
     title: 'Other Projects',
-    icon: Activity,
+    icon: FolderOpen,
     projects: [
       {
         id: 1,
@@ -98,7 +98,7 @@ const projectData = {
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
         image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
         challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
-        solution: 'Worked for over 2 years for: level desgin, programming, graphic design, and publishing to Steam. ',
+        solution: 'Worked for over 2 years on: level desgin, programming, graphic design, and publishing to Steam. ',
         tags: ['Programming', 'Problem Solving', 'Graphic Design', 'Teamwork'],
       },
     ],
