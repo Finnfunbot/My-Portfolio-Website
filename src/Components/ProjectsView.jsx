@@ -19,36 +19,8 @@ const projectData = {
         solution: 'Used Solidworks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
         tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
       },
-      {
-        id: 2,
-        title: 'Robotic Car',
-        // Cloudinary STL Link
-        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
-        image: 'https://d2n4wb9orp1vta.cloudfront.net/cms/brand/CW/2020-CW/0920-cw-fod-ACTblade-drawing1.jpg;maxWidth=720',
-        challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
-        solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, opa-mps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
-        tags: ['Circuitry', 'Problem Solving'],
-      },
-      {
-        id: 3,
-        title: 'Sun Tracking Solar Panel',
-        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765768811/mwt_b-type_a0ursy.glb',
-        image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-        challenge: 'Design a handheld solar panel that tracks the movement of the sun to optimize energy harvesting efficiency.',
-        solution: 'Add light sensors on each corner of the solar panel to determine the orientation needed to face the sun. Used 2 degrees of freedom to allow proper movement of the solar panel to point towards the target.',
-        tags: ['Circuitry', 'Problem Solving', 'Coding', 'Teamwork'],
-      },
-      {
-        id: 4,
-        title: 'Droid404',
-        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
-        image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
-        challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
-        solution: 'Worked for over 2 years for: level desgin, programming, graphic design, and publishing to Steam. ',
-        tags: ['Programming', 'Problem Solving', 'Graphic Design', 'Teamwork'],
-      },
        {
-        id: 5,
+        id: 2,
         title: 'Lunar Rover (WIP)',
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
         image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
@@ -72,30 +44,6 @@ const projectData = {
         solution: 'Designed gyroid lattice structures using nTopology, achieving 60% weight reduction.',
         tags: ['nTopology', 'DMLS', 'Lightweighting'],
       },
-      {
-        id: 2,
-        title: 'Custom Medical Implants',
-        image: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80',
-        challenge: 'Create patient-specific orthopedic implants from CT scan data.',
-        solution: 'Developed workflow for DICOM processing to titanium SLM printing with porous surfaces.',
-        tags: ['Medical', 'Titanium SLM', 'Biomedical'],
-      },
-      {
-        id: 3,
-        title: 'Conformal Cooling Molds',
-        image: 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=600&q=80',
-        challenge: 'Reduce injection molding cycle time with improved thermal management.',
-        solution: 'Printed mold inserts with conformal cooling channels, reducing cycle time by 40%.',
-        tags: ['DMLS', 'Injection Molding', 'Thermal'],
-      },
-      {
-        id: 4,
-        title: 'Aerospace Bracket Redesign',
-        image: 'https://images.unsplash.com/photo-1517976487492-5750f3195933?w=600&q=80',
-        challenge: 'Redesign legacy bracket for AM production while meeting flight certification.',
-        solution: 'Topology-optimized design with 45% weight savings, certified for flight use.',
-        tags: ['Topology Optimization', 'Aerospace', 'Certification'],
-      },
     ],
   },
   fea: {
@@ -111,29 +59,46 @@ const projectData = {
         solution: 'Conducted explicit dynamic analysis in LS-DYNA with material failure modeling.',
         tags: ['LS-DYNA', 'Crash Analysis', 'Automotive'],
       },
+    ],
+  },
+  electrical: {
+    title: 'Electrical Projects',
+    description: 'Electrical projects',
+    icon: Activity,
+    projects: {
+      {
+        id: 1,
+        title: 'Robotic Car',
+        // Cloudinary STL Link
+        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
+        image: 'https://d2n4wb9orp1vta.cloudfront.net/cms/brand/CW/2020-CW/0920-cw-fod-ACTblade-drawing1.jpg;maxWidth=720',
+        challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
+        solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, opa-mps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
+        tags: ['Circuitry', 'Problem Solving'],
+      },
       {
         id: 2,
-        title: 'Thermal-Structural Coupling',
-        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80',
-        challenge: 'Analyze spacecraft component under orbital thermal cycling conditions.',
-        solution: 'Performed coupled thermal-structural analysis in ANSYS with orbital heat flux inputs.',
-        tags: ['ANSYS', 'Thermal', 'Aerospace'],
-      },
-      {
-        id: 3,
-        title: 'Fatigue Life Prediction',
+        title: 'Sun Tracking Solar Panel',
+        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/image/upload/v1765768811/mwt_b-type_a0ursy.glb',
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-        challenge: 'Predict service life of rotating machinery shaft under cyclic loading.',
-        solution: 'Applied stress-life approach with rainflow counting and Miner\'s rule accumulation.',
-        tags: ['Abaqus', 'Fatigue', 'Durability'],
+        challenge: 'Design a handheld solar panel that tracks the movement of the sun to optimize energy harvesting efficiency.',
+        solution: 'Add light sensors on each corner of the solar panel to determine the orientation needed to face the sun. Used 2 degrees of freedom to allow proper movement of the solar panel to point towards the target.',
+        tags: ['Circuitry', 'Problem Solving', 'Coding', 'Teamwork'],
       },
+    ],
+  },
+  other: {
+    title: 'Other Projects',
+    icon: Activity,
+    projects: [
       {
-        id: 4,
-        title: 'Modal Vibration Study',
-        image: 'https://images.unsplash.com/photo-1504222490345-c075b6008014?w=600&q=80',
-        challenge: 'Characterize natural frequencies of satellite deployable antenna.',
-        solution: 'Conducted modal analysis and random vibration response for launch qualification.',
-        tags: ['ANSYS', 'Modal Analysis', 'Random Vibration'],
+        id: 1,
+        title: 'Droid404',
+        modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl',
+        image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80',
+        challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
+        solution: 'Worked for over 2 years for: level desgin, programming, graphic design, and publishing to Steam. ',
+        tags: ['Programming', 'Problem Solving', 'Graphic Design', 'Teamwork'],
       },
     ],
   },
@@ -202,7 +167,7 @@ export default function ProjectsView({ category }) {
                         key={activeProject.modelUrl}
                         url={activeProject.modelUrl} 
                         autoRotate={true}
-                        autoRotateSpeed={0.8}
+                        autoRotateSpeed={0.1}
                     />
                   </div>
                 ) : (
