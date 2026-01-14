@@ -13,7 +13,7 @@ import {
 
 const skills = [
   {
-    name: 'Solidworks',
+    name: 'SolidWorks',
     category: 'CAD',
     level: 60,
     icon: Box,
