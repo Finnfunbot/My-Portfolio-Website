@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, Linkedin, Box, Printer, Activity } from 'lucide-react';
+import { Menu, X, ChevronDown, Linkedin, Box, Printer, Activity, Cpu, FolderOpen } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation({ currentView, setCurrentView }) {
@@ -19,6 +19,8 @@ export default function Navigation({ currentView, setCurrentView }) {
     { id: '3d-modeling', label: '3D Modeling', icon: Box },
     { id: '3d-printing', label: '3D Printing', icon: Printer },
     { id: 'fea', label: 'FEA Analysis', icon: Activity },
+    { id: 'electrical', label: 'Electrical', icon: Cpu },
+    { id: 'other', label: 'Other Projects', icon: Activity },
   ];
 
   const handleNavClick = (view) => {
