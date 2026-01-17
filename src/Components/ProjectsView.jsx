@@ -85,7 +85,7 @@ const projectData = {
         // Cloudinary STL Link
         modelUrl: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
         image: 'https://d2n4wb9orp1vta.cloudfront.net/cms/brand/CW/2020-CW/0920-cw-fod-ACTblade-drawing1.jpg;maxWidth=720',
-        context: 'This project was assigned in UMass course: ECE 361 - Intro to Electrical Engineering. We were given all the supplies needed and lecture slides to complete tasks given, 1 assignment every 1-2 weeks. This project was primarily to apply what we learned in lecture to real life solutions as well as to inspire students to pursue additional projects of the same nature. I became a Teaching Assistant the following year for this course, mentoring students on the concepts and applications taught in this course.',
+        context: 'This project was assigned in UMass course: ECE 361 - Fundamentals to Electrical Engineering. We were given all the supplies needed and lecture slides to complete tasks given, 1 assignment every 1-2 weeks. This project was primarily to apply what we learned in lecture to real life solutions as well as to inspire students to pursue additional projects of the same nature. I became a Teaching Assistant the following year for this course, mentoring students on the concepts and applications taught in this course.',
         challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
         solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, op-amps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
         tags: ['Circuitry', 'Problem Solving'],
