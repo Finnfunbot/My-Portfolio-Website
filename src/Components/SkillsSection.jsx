@@ -122,7 +122,7 @@ export default function SkillsSection() {
                   </h3>
 
                   {/* Progress Bar */}
-                  <div className="pt-4">
+                  {/* <div className="pt-4">
                     <div className="flex justify-between text-sm mb-2">
                       <span className="text-[#00416B]/60">Proficiency</span>
                       <span className="font-semibold text-[#00416B]">{skill.level}%</span>
@@ -136,7 +136,7 @@ export default function SkillsSection() {
                         className={`h-full bg-gradient-to-r ${skill.color} rounded-full`}
                       />
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
