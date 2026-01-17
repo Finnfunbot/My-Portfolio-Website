@@ -20,7 +20,7 @@ export default function Navigation({ currentView, setCurrentView }) {
     { id: '3d-printing', label: '3D Printing', icon: Printer },
     { id: 'fea', label: 'FEA Analysis', icon: Activity },
     { id: 'electrical', label: 'Electrical', icon: Cpu },
-    { id: 'other', label: 'Other Projects', icon: Activity },
+    { id: 'other', label: 'Other Projects', icon: FolderOpen },
   ];
 
   const handleNavClick = (view) => {
