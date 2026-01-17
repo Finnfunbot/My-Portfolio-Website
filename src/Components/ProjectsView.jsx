@@ -66,7 +66,7 @@ const projectData = {
     title: 'Electrical Projects',
     // description: 'Electrical projects',
     icon: Cpu,
-    projects: {
+    projects: [
       {
         id: 1,
         title: 'Robotic Car',
