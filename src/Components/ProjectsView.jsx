@@ -67,9 +67,9 @@ const projectData = {
             caption: 'The final 3D printed assembly glowing in low light.'
           },
         ],
-        context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. The end result evoked a reaction of "One of the best gifts I\'ve ever gotten," which validated the design effort put into the aesthetics and functionality.',
-        challenge: 'The primary challenge was designing a lightbox to display a lithophane portrait that allowed for easy swapping of images. It needed to be interchangeable while preventing light leakage from seamless openings. Additionally, the battery pack had to be accessible for replacement without compromising the sleek visual design.',
-        solution: 'I used SolidWorks to design the model and 3D printing for rapid iteration. I developed a custom snap-fit mechanism to connect the two parts of the box, ensuring zero light leakage. A sliding track system was engineered to allow lithophanes to be manually inserted and removed. I also integrated electrical components to activate LEDs via a discreet switch and designed a hidden door for quick battery replacement.',
+        context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. End result ended in a reaction of "One of the best gifts I\'ve ever gotten."',
+        challenge: 'Design a lightbox to display a lithophane portrait. Must be interchangeable, prevent light leakage from seemless openings.',
+        solution: 'Used SolidWorks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
         tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
       },
       {
@@ -88,9 +88,9 @@ const projectData = {
             caption: 'Wheel traction testing in simulated regolith sand.' 
           },
         ],
-        context: 'Working in the UMass ASME chapter for this project. Currently, I serve as the co-captain for the chassis sub-team, overseeing the integration of suspension and drive systems.',
-        challenge: 'We need to develop a lunar rover for an upcoming NASA-sponsored competition. The critical requirement is to develop wheels that support 20+kg of weight per tire while maintaining traction on loose, sand-like terrain (regolith) without sinking or slipping.',
-        solution: 'I led the 3D modeling and iteration of the wheel designs. We utilized 3D-printed flexible materials (TPU) to test various tread patterns. The final design incorporates a compliant structure that deforms slightly to increase surface area contact on loose terrain.',
+        context: 'Working in UMass ASME chapter for this project. Currently the co-captain for the chassis sub-team.',
+        challenge: 'Develop a lunar rover for an upcoming NASA sponsored competition. Devlop wheels to support 20+kg of weight per tire. Needs to have traction on loose terrain. ',
+        solution: '3D model and iterate wheel designs. 3D printed models to test and iterate based on results.',
         tags: ['SolidWorks', 'Gear Design', 'Tolerancing'],
       },
     ],
@@ -102,17 +102,39 @@ const projectData = {
     projects: [
       {
         id: 1,
+        title: 'Interchangeable Lithophane Lightbox',
+        media: [
+          { 
+            type: 'model', 
+            url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb', 
+            thumb: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&q=80',
+            caption: 'Interactive 3D view of the assembled lightbox mechanism.'
+          },
+          { 
+            type: 'image', 
+            src: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80', 
+            thumb: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&q=80',
+            caption: 'The final 3D printed assembly glowing in low light.'
+          },
+        ],
+        context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. End result ended in a reaction of "One of the best gifts I\'ve ever gotten."',
+        challenge: 'Design a lightbox to display a lithophane portrait. Must be interchangeable, prevent light leakage from seemless openings.',
+        solution: 'Used SolidWorks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
+        tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
+      },
+      {
+        id: 2,
         title: 'Assorted Prints',
         media: [
           { 
             type: 'image', 
             src: 'https://images.unsplash.com/photo-1631541909061-71e349d1f203?w=1200&q=80', 
-            caption: 'Collection of functional mechanical parts printed in PETG.' 
+            caption: '3D Printing Hobby Pieces' 
           },
         ],
-        context: 'Here is an assortment of 3D printed parts I have made for fun or testing. These range from functional household repairs to complex mechanical prototypes.',
-        challenge: 'The main challenge is often troubleshooting the printer to create a functional part using a variety of materials (PLA, ABS, PETG, TPU). Issues like bed adhesion, layer warping, and nozzle clogging require constant adjustment.',
-        solution: 'I conducted extensive research and testing to create custom print profiles for each material. This involved calibrating retraction settings, temperatures, and print speeds to ensure high success rates and dimensional accuracy.',
+        context: 'Here is an assortment of 3D printed parts I\'ve made for fun or testing.',
+        challenge: 'Troubleshoot printer to create a functional part, using a variety of materials (PLA, ABS, PETG, TPU).',
+        solution: 'Did a lot of research and testing to determine why print failures occured and how to prevent them.',
         tags: ['3D Printing', 'Rapid Prototyping', 'Problem Solving', 'Research'],
       },
     ],
@@ -133,6 +155,8 @@ const projectData = {
           },
         ],
         context: 'Working in UMass ASME chapter for this project. I am currently working on the wheel design, feasibility, and testing.',
+        challenge: 'To validate the integrity of a 3D model to withstand pressure from terrain and force on axis of rotation. Also to determine varaiblility of the testing compared to a real test wheel, as it doesn\'t account for a 3D printed part',
+        solution: 'Conducted FEA on ANSYS. Used results to determine the probability of success of a real part. Then performed testing on said part to conclude the wheel passes all tests.',
         tags: ['ANSYS', 'SolidWorks', 'Testing'],
       },
     ],
@@ -155,9 +179,30 @@ const projectData = {
             src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80' 
           },
         ],
-        context: 'Electrical and embedded design for a small robotic car. This project focused on integrating sensors with motor control logic.',
-        tags: ['Embedded', 'Motors', 'PCBs'],
+        context: 'This project was assigned in UMass course: ECE 361 - Fundamentals to Electrical Engineering. We were given all the supplies needed and lecture slides to complete tasks given, 1 assignment every 1-2 weeks. This project was primarily to apply what we learned in lecture to real life solutions as well as to inspire students to pursue additional projects of the same nature. I became a Teaching Assistant the following year for this course, mentoring students on the concepts and applications taught in this course.',
+        challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
+        solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, op-amps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
+        tags: ['Circuitry', 'Problem Solving'],
       },
+      {
+        id: 2,
+        title: 'Sun Tracking Solar Panel',
+        media: [
+          { 
+            type: 'model', 
+            url: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
+            thumb: 'https://images.unsplash.com/photo-1535378437832-3815b40acd5e?w=600&q=80' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80' 
+          },
+        ],
+        context: 'This was a project given during a 2-week summer course at UMass Amherst, before I enrolled as a student. I was part a group of 4 students and an instuctor. We wanted to prove the feasbility of the concept and potentially apply it on a larger scale to test results.',
+        challenge: 'Design a handheld solar panel that tracks the movement of the sun to optimize energy harvesting efficiency.',
+        solution: 'Add light sensors on each corner of the solar panel to determine the orientation needed to face the sun. Used 2 degrees of freedom to allow proper movement of the solar panel to point towards the target.',
+        tags: ['Circuitry', 'Problem Solving', 'Coding', 'Teamwork'],
+
     ],
   },
   other: {
@@ -171,8 +216,10 @@ const projectData = {
         media: [
           { type: 'image', src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', caption: 'Gameplay screenshot showing level design.' },
         ],
-        context: 'This project was made during the 2020 Covid Pandemic with one of my closest friends. We worked many hours per day, balancing extracurriculars, school, and Droid404 for over 2 years until the day of the launch.',
-        tags: ['Programming', 'Teamwork', 'Design'],
+        context: 'This project was made during the 2020 Covid Pandemic with one of my closest friends. We worked many hours per day, balancing extracurriculars, school, and Droid404 for over 2 years until the day of the launch. Game link: https://store.steampowered.com/app/1663030/Droid404/',
+        challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
+        solution: 'Worked for over 2 years on: level desgin, programming, graphic design, and publishing to Steam. ',
+        tags: ['Programming', 'Problem Solving', 'Graphic Design', 'Teamwork'],
       },
     ],
   },
