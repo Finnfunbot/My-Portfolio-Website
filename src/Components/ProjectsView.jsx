@@ -202,7 +202,7 @@ const projectData = {
         challenge: 'Design a handheld solar panel that tracks the movement of the sun to optimize energy harvesting efficiency.',
         solution: 'Add light sensors on each corner of the solar panel to determine the orientation needed to face the sun. Used 2 degrees of freedom to allow proper movement of the solar panel to point towards the target.',
         tags: ['Circuitry', 'Problem Solving', 'Coding', 'Teamwork'],
-
+      }
     ],
   },
   other: {
