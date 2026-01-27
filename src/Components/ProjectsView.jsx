@@ -108,8 +108,8 @@ const projectData = {
           },
           { 
             type: 'model', 
-            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769544558/Lightbox_Ass2_pzrwkr.glb', //https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb
-            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769544620/Lightbox_SS_sfi3xk.png',
+            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545213/Lightbox_Ass2_kwt8ar.glb', //https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545221/Lightbox_SS_rqg9eb.png',
             caption: 'Interactive 3D view of the assembled lightbox mechanism.'
           },
         ],
