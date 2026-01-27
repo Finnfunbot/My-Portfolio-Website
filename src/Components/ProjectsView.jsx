@@ -195,7 +195,7 @@ const projectData = {
         media: [
           { 
             type: 'video', 
-            url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
+            url: 'https://www.yout-ube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
             caption: 'Official Gameplay Trailer'
             // No thumb needed: it will auto-fetch from YouTube!
           },
