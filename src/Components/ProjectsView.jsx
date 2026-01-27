@@ -74,25 +74,19 @@ const projectData = {
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt',
-            caption: 'The final 3D printed assembly glowing in low light.'
-          },
-          { 
-            type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6223_znuzsw', 
-            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6223_znuzsw',
-            caption: 'The final 3D printed assembly glowing in low light.'
+            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy',
-            caption: 'The final 3D printed assembly glowing in low light.'
+            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj',
-            caption: 'The final 3D printed assembly glowing in low light.'
+            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
@@ -115,7 +109,7 @@ const projectData = {
         ],
         context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. End result ended in a reaction of "One of the best gifts I\'ve ever gotten."',
         challenge: 'Design a lightbox to display a lithophane portrait. Must be interchangeable, prevent light leakage from seemless openings.',
-        solution: 'Used SolidWorks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
+        solution: 'Used SolidWorks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid in for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
         tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
       },
       {
@@ -123,15 +117,25 @@ const projectData = {
         title: 'Lunar Rover (WIP)',
         media: [
           { 
-            type: 'model', 
-            url: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
-            thumb: 'https://images.unsplash.com/photo-1541562232579-512a21360020?w=600&q=80',
-            caption: 'Chassis design v2.4 showing suspension mounting points.'
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
+            caption: '3D Printed version of the wheel' 
           },
+          /*{ 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: 'Wheel traction testing in simulated regolith sand.' 
+          },*/
           { 
             type: 'image', 
-            src: 'https://images.unsplash.com/photo-1614728853913-6591d00104e7?w=1200&q=80', 
-            caption: 'Wheel traction testing in simulated regolith sand.' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: '3D model of the wheel' 
+          },
+          { 
+            type: 'model', 
+            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556399/Curvy_Wheel_ssxe5z.glb', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png',
+            caption: 'Chassis design v2.4 showing suspension mounting points.'
           },
         ],
         context: 'Working in UMass ASME chapter for this project. Currently the co-captain for the chassis sub-team.',
@@ -148,12 +152,62 @@ const projectData = {
     projects: [
       {
         id: 1,
-        title: 'Assorted Prints',
+        title: 'Assorted Hobby Prints',
         media: [
           { 
             type: 'image', 
-            src: 'https://images.unsplash.com/photo-1631541909061-71e349d1f203?w=1200&q=80', 
-            caption: '3D Printing Hobby Pieces' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545940/IMG_6391_k5idse.jpg', 
+            caption: 'A Dawngaurd War Axe from the game Skyrim. Has a wooden dowel for a core' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545937/IMG_6388_atltju.jpg', 
+            caption: 'A Klein Bottle. This 4D topoligical shape has no distinct inside nor outside' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545935/IMG_6387_lbpvbd.jpg', 
+            caption: 'A Devil Fruit from the show One Piece' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545934/IMG_6385_mmm1xe.jpg', 
+            caption: 'A Devil Fruit from the show One Piece' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545931/IMG_6384_hxephs.jpg', 
+            caption: 'A small flexible axolotyl' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545929/IMG_6382_vouk6e.jpg', 
+            caption: 'A dragon that snaps into place, allowing for many configurations' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545926/IMG_6376_mmncaz.jpg', 
+            caption: 'An Assasins Teapot. This teapot has 2 chambers, allowing the user to pour two different liquids from the same spout' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545926/IMG_6378_qy7pca.jpg', 
+            caption: 'A tabletop dragon skull' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545924/IMG_6375_kwxgqc.jpg', 
+            caption: 'A small desktop dolphin, with very fine layers' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545924/IMG_6374_ftjtkj.jpg', 
+            caption: 'A small dragon with complex details' 
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545924/IMG_6373_kwkqqv.jpg', 
+            caption: 'DNA strand, showcasing overhang strength' 
           },
         ],
         context: 'Here is an assortment of 3D printed parts I\'ve made for fun or testing.',
