@@ -108,7 +108,7 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
                   key={active.url}
                   url={active.url}
                   placeholderSrc={active.thumb}
-                  autoRotate={true}
+                  autoRotate={false}
                   autoRotateSpeed={0.5}
                   width="100%"
                   height="100%"
