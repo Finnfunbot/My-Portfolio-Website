@@ -2,15 +2,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Box, MousePointer2, PlayCircle } from 'lucide-react';
 import ModelViewer from './ModelViewer';
 
-/**
- * Props:
- * - media: [{ type: 'image'|'model'|'video', src?/url?, alt?, thumb?, caption? }]
- * - initialIndex: number
- * - className
- */
 export default function MediaCarousel({ media = [], initialIndex = 0, className = '' }) {
   const [index, setIndex] = useState(initialIndex);
-  const [isInteracting, setIsInteracting] = useState(false); // Controls lazy load for Models & Videos
+  const [isInteracting, setIsInteracting] = useState(false);
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -18,13 +12,12 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
     setIsInteracting(false);
   }, [initialIndex, media]);
 
-  // Reset interaction state when sliding to a new item
   const handleSlideChange = (newIndex) => {
     setIndex(newIndex);
     setIsInteracting(false);
   };
 
-  // Helper: Extract YouTube ID from various URL formats
+  // 1. Helper: Detect if URL is YouTube
   const getYouTubeId = (url) => {
     if (!url) return null;
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -32,14 +25,25 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
     return (match && match[2].length === 11) ? match[2] : null;
   };
 
-  // Helper: Get Thumbnail (User provided OR Auto-YouTube)
+  // 2. Helper: Check if it's a direct video file (MP4/WebM)
+  const isDirectVideo = (url) => {
+    return url?.match(/\.(mp4|webm|ogg)$/i);
+  };
+
+  // 3. Helper: Smart Thumbnailer
   const getThumbnail = (item) => {
     if (item.thumb) return item.thumb;
-    if (item.type === 'video' && item.url) {
-      const vidId = getYouTubeId(item.url);
-      if (vidId) return `https://img.youtube.com/vi/${vidId}/maxresdefault.jpg`;
+    
+    // Auto-fetch YouTube thumb
+    const ytId = getYouTubeId(item.url);
+    if (item.type === 'video' && ytId) {
+      return `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
     }
-    return item.src || ''; // Fallback for images
+    
+    // Fallback for generic video files if no thumb provided
+    if (item.type === 'video') return 'https://via.placeholder.com/800x600?text=Video';
+    
+    return item.src || '';
   };
 
   if (!media || media.length === 0) {
@@ -51,10 +55,12 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
   }
 
   const active = media[index];
+  const ytId = active.type === 'video' ? getYouTubeId(active.url) : null;
+  const isDirectVid = active.type === 'video' ? isDirectVideo(active.url) : null;
+
   const prev = () => handleSlideChange((index - 1 + media.length) % media.length);
   const next = () => handleSlideChange((index + 1) % media.length);
 
-  // Keyboard navigation
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -81,7 +87,6 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
           >
             <ChevronLeft className="w-5 h-5 text-[#00416B]" />
           </button>
-
           <button
             onClick={next}
             className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm border border-[#00416B]/10 hover:bg-white transition"
@@ -92,11 +97,11 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
       )}
 
       {/* Main Content Area */}
-      <div className="w-full h-full">
+      <div className="w-full h-full bg-black">
         
         {/* --- 3D MODEL --- */}
         {active.type === 'model' && (
-          <div className="w-full h-full relative group">
+          <div className="w-full h-full relative group bg-gray-50">
             {isInteracting ? (
               <>
                 <ModelViewer
@@ -124,20 +129,39 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
           </div>
         )}
 
-        {/* --- VIDEO (YouTube) --- */}
+        {/* --- VIDEO HANDLING --- */}
         {active.type === 'video' && (
-          <div className="w-full h-full relative bg-black">
+          <div className="w-full h-full relative flex items-center justify-center">
             {isInteracting ? (
-              <iframe
-                width="100%"
-                height="100%"
-                src={`https://www.youtube.com/embed/${getYouTubeId(active.url)}?autoplay=1&rel=0`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0"
-              />
+              <>
+                {/* 1. YOUTUBE PLAYER */}
+                {ytId && (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    // Using youtube-nocookie and optimized params
+                    src={`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  />
+                )}
+
+                {/* 2. DIRECT FILE PLAYER (.mp4) */}
+                {/* Clean, Ad-Free HTML5 Player */}
+                {!ytId && (
+                  <video 
+                    controls 
+                    autoPlay 
+                    className="w-full h-full object-contain"
+                  >
+                    <source src={active.url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                )}
+              </>
             ) : (
               <LazyFacade 
                 thumb={getThumbnail(active)} 
@@ -151,7 +175,7 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
 
         {/* --- IMAGE --- */}
         {active.type === 'image' && (
-          <div className="w-full h-full relative">
+          <div className="w-full h-full relative bg-gray-50">
             <img
               src={active.src}
               alt={active.alt || 'Project image'}
@@ -189,7 +213,6 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
               alt={`thumb-${i}`} 
               className="w-full h-full object-cover" 
             />
-            {/* Tiny Icons on Thumbnails */}
             <div className="absolute inset-0 flex items-center justify-center bg-black/20">
               {m.type === 'model' && <Box className="w-3 h-3 text-white drop-shadow-md" />}
               {m.type === 'video' && <PlayCircle className="w-3 h-3 text-white drop-shadow-md" />}
@@ -201,15 +224,14 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
   );
 }
 
-// --- Sub-component for Lazy Loading Facades ---
 const LazyFacade = ({ thumb, icon: Icon, label, onClick }) => (
-  <div className="w-full h-full relative group cursor-pointer" onClick={onClick}>
+  <div className="w-full h-full relative group cursor-pointer bg-gray-100" onClick={onClick}>
     <img
       src={thumb}
       alt="Preview"
-      className="w-full h-full object-cover blur-[2px] scale-105 group-hover:scale-100 transition-transform duration-700"
+      className="w-full h-full object-cover blur-[2px] scale-105 group-hover:scale-100 transition-transform duration-700 opacity-90"
     />
-    <div className="absolute inset-0 bg-[#00416B]/30 group-hover:bg-[#00416B]/20 transition-colors flex flex-col items-center justify-center">
+    <div className="absolute inset-0 bg-[#00416B]/20 group-hover:bg-[#00416B]/10 transition-colors flex flex-col items-center justify-center">
       <div className="flex flex-col items-center gap-3">
         <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
           <Icon className="w-8 h-8 text-[#00416B] ml-0.5" />
