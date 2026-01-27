@@ -44,6 +44,15 @@ const ExpandableText = ({ text, limit = 250 }) => {
   );
 };
 
+/* for video:
+          { 
+            type: 'video', 
+            url: 'https://www.yout-ube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
+            caption: 'Official Gameplay Trailer'
+            // No thumb needed: it will auto-fetch from YouTube!
+          },
+*/
+
 // --- Updated Project Data with Videos & Captions ---
 const projectData = {
   '3d-modeling': {
@@ -56,16 +65,52 @@ const projectData = {
         title: 'Interchangeable Lithophane Lightbox',
         media: [
           { 
-            type: 'model', 
-            url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb', 
-            thumb: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&q=80',
-            caption: 'Interactive 3D view of the assembled lightbox mechanism.'
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6246_lw9sci', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6246_lw9sci',
+            caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
-            src: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80', 
-            thumb: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&q=80',
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt',
             caption: 'The final 3D printed assembly glowing in low light.'
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6223_znuzsw', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6223_znuzsw',
+            caption: 'The final 3D printed assembly glowing in low light.'
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy',
+            caption: 'The final 3D printed assembly glowing in low light.'
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj',
+            caption: 'The final 3D printed assembly glowing in low light.'
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6214_bauzfq', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6214_bauzfq',
+            caption: 'Different iterations of the box, with slight tweaks in each'
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/Wireframe_ncd7k4', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/Wireframe_ncd7k4',
+            caption: 'Wireframe view of the model'
+          },
+          { 
+            type: 'model', 
+            url: 'https://res.cloudinary.com/drjhgqwur/raw/upload/v1769542628/Cover2-8_kdnosp.STEP', //https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb
+            thumb: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&q=80',
+            caption: 'Interactive 3D view of the assembled lightbox mechanism.'
           },
         ],
         context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. End result ended in a reaction of "One of the best gifts I\'ve ever gotten."',
@@ -193,12 +238,6 @@ const projectData = {
         id: 1,
         title: 'Droid404 (Game)',
         media: [
-          { 
-            type: 'video', 
-            url: 'https://www.yout-ube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
-            caption: 'Official Gameplay Trailer'
-            // No thumb needed: it will auto-fetch from YouTube!
-          },
           { 
             type: 'image', 
             src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', 
