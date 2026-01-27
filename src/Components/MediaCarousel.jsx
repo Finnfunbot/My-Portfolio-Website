@@ -1,27 +1,45 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, Box, MousePointer2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Box, MousePointer2, PlayCircle } from 'lucide-react';
 import ModelViewer from './ModelViewer';
 
 /**
  * Props:
- * - media: [{ type: 'image'|'model', src?/url?, alt?, thumb?, caption? }]
+ * - media: [{ type: 'image'|'model'|'video', src?/url?, alt?, thumb?, caption? }]
  * - initialIndex: number
  * - className
  */
 export default function MediaCarousel({ media = [], initialIndex = 0, className = '' }) {
   const [index, setIndex] = useState(initialIndex);
-  const [shouldLoadModel, setShouldLoadModel] = useState(false); // Lazy load state
+  const [isInteracting, setIsInteracting] = useState(false); // Controls lazy load for Models & Videos
   const containerRef = useRef(null);
 
   useEffect(() => {
     setIndex(initialIndex);
-    setShouldLoadModel(false); // Reset model loading when project changes
-  }, [initialIndex, media]); // Added media dependency to ensure reset on project swap
+    setIsInteracting(false);
+  }, [initialIndex, media]);
 
-  // Reset lazy load state when sliding to a new item
+  // Reset interaction state when sliding to a new item
   const handleSlideChange = (newIndex) => {
     setIndex(newIndex);
-    setShouldLoadModel(false);
+    setIsInteracting(false);
+  };
+
+  // Helper: Extract YouTube ID from various URL formats
+  const getYouTubeId = (url) => {
+    if (!url) return null;
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
+  };
+
+  // Helper: Get Thumbnail (User provided OR Auto-YouTube)
+  const getThumbnail = (item) => {
+    if (item.thumb) return item.thumb;
+    if (item.type === 'video' && item.url) {
+      const vidId = getYouTubeId(item.url);
+      if (vidId) return `https://img.youtube.com/vi/${vidId}/maxresdefault.jpg`;
+    }
+    return item.src || ''; // Fallback for images
   };
 
   if (!media || media.length === 0) {
@@ -46,22 +64,19 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
     };
     el.addEventListener('keydown', onKey);
     return () => el.removeEventListener('keydown', onKey);
-  }, [media.length, index]); // Added index dependency for accurate closure
+  }, [media.length, index]);
 
   return (
     <div
       ref={containerRef}
       tabIndex={0}
       className={`relative w-full h-full min-h-[400px] bg-gray-50 rounded-2xl overflow-hidden shadow-inner ${className}`}
-      aria-roledescription="carousel"
-      aria-label="Project media carousel"
     >
       {/* Navigation Arrows */}
       {media.length > 1 && (
         <>
           <button
             onClick={prev}
-            aria-label="Previous"
             className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm border border-[#00416B]/10 hover:bg-white transition"
           >
             <ChevronLeft className="w-5 h-5 text-[#00416B]" />
@@ -69,7 +84,6 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
 
           <button
             onClick={next}
-            aria-label="Next"
             className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-sm border border-[#00416B]/10 hover:bg-white transition"
           >
             <ChevronRight className="w-5 h-5 text-[#00416B]" />
@@ -79,13 +93,14 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
 
       {/* Main Content Area */}
       <div className="w-full h-full">
-        {active.type === 'model' ? (
+        
+        {/* --- 3D MODEL --- */}
+        {active.type === 'model' && (
           <div className="w-full h-full relative group">
-            {shouldLoadModel ? (
-              // Active Model Viewer
+            {isInteracting ? (
               <>
                 <ModelViewer
-                  key={active.url || active.src}
+                  key={active.url}
                   url={active.url}
                   placeholderSrc={active.thumb}
                   autoRotate={true}
@@ -99,31 +114,43 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
                 </div>
               </>
             ) : (
-              // Lazy Load Facade (Thumbnail + Button)
-              <div className="w-full h-full relative">
-                 <img
-                  src={active.thumb}
-                  alt="3D Model Preview"
-                  className="w-full h-full object-cover blur-[2px] scale-105"
-                />
-                <div className="absolute inset-0 bg-[#00416B]/20 flex flex-col items-center justify-center">
-                  <button 
-                    onClick={() => setShouldLoadModel(true)}
-                    className="flex flex-col items-center gap-3 group/btn"
-                  >
-                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover/btn:scale-110 transition-transform duration-300">
-                      <MousePointer2 className="w-8 h-8 text-[#00416B] ml-1" />
-                    </div>
-                    <span className="px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm font-bold text-[#00416B] shadow-sm">
-                      Click to View 3D Model
-                    </span>
-                  </button>
-                </div>
-              </div>
+              <LazyFacade 
+                thumb={active.thumb} 
+                icon={MousePointer2} 
+                label="Click to View 3D Model" 
+                onClick={() => setIsInteracting(true)} 
+              />
             )}
           </div>
-        ) : (
-          // Image Viewer
+        )}
+
+        {/* --- VIDEO (YouTube) --- */}
+        {active.type === 'video' && (
+          <div className="w-full h-full relative bg-black">
+            {isInteracting ? (
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${getYouTubeId(active.url)}?autoplay=1&rel=0`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0"
+              />
+            ) : (
+              <LazyFacade 
+                thumb={getThumbnail(active)} 
+                icon={PlayCircle} 
+                label="Click to Watch Video" 
+                onClick={() => setIsInteracting(true)} 
+              />
+            )}
+          </div>
+        )}
+
+        {/* --- IMAGE --- */}
+        {active.type === 'image' && (
           <div className="w-full h-full relative">
             <img
               src={active.src}
@@ -151,27 +178,46 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
           <button
             key={i}
             onClick={() => handleSlideChange(i)}
-            aria-label={`Go to media ${i + 1}`}
             className={`w-12 h-8 flex-shrink-0 rounded-md overflow-hidden border-2 transition-all duration-300 ${
               i === index 
                 ? 'border-[#00416B] scale-110 shadow-md' 
                 : 'border-transparent opacity-70 hover:opacity-100'
-            } bg-white`}
+            } bg-white relative`}
           >
-            {m.type === 'image' ? (
-              <img src={m.thumb || m.src} alt={`thumb-${i}`} className="w-full h-full object-cover" />
-            ) : (
-              m.thumb ? (
-                <img src={m.thumb} alt="model thumb" className="w-full h-full object-cover" />
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-[#00416B] bg-[#EAF2F6]">
-                  <Box className="w-4 h-4" />
-                </div>
-              )
-            )}
+            <img 
+              src={getThumbnail(m)} 
+              alt={`thumb-${i}`} 
+              className="w-full h-full object-cover" 
+            />
+            {/* Tiny Icons on Thumbnails */}
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+              {m.type === 'model' && <Box className="w-3 h-3 text-white drop-shadow-md" />}
+              {m.type === 'video' && <PlayCircle className="w-3 h-3 text-white drop-shadow-md" />}
+            </div>
           </button>
         ))}
       </div>
     </div>
   );
 }
+
+// --- Sub-component for Lazy Loading Facades ---
+const LazyFacade = ({ thumb, icon: Icon, label, onClick }) => (
+  <div className="w-full h-full relative group cursor-pointer" onClick={onClick}>
+    <img
+      src={thumb}
+      alt="Preview"
+      className="w-full h-full object-cover blur-[2px] scale-105 group-hover:scale-100 transition-transform duration-700"
+    />
+    <div className="absolute inset-0 bg-[#00416B]/30 group-hover:bg-[#00416B]/20 transition-colors flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+          <Icon className="w-8 h-8 text-[#00416B] ml-0.5" />
+        </div>
+        <span className="px-4 py-2 bg-white/90 backdrop-blur rounded-full text-sm font-bold text-[#00416B] shadow-sm">
+          {label}
+        </span>
+      </div>
+    </div>
+  </div>
+);
