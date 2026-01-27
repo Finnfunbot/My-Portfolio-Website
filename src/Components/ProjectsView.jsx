@@ -9,7 +9,8 @@ import {
   Cpu,
   FolderOpen,
   ChevronDown,
-  ChevronUp
+  ChevronUp,
+  PlayCircle // Added PlayCircle icon
 } from 'lucide-react';
 import MediaCarousel from './MediaCarousel';
 
@@ -43,7 +44,7 @@ const ExpandableText = ({ text, limit = 250 }) => {
   );
 };
 
-// --- Updated Project Data with Captions ---
+// --- Updated Project Data with Videos & Captions ---
 const projectData = {
   '3d-modeling': {
     title: '3D Modeling Projects',
@@ -102,28 +103,6 @@ const projectData = {
     projects: [
       {
         id: 1,
-        title: 'Interchangeable Lithophane Lightbox',
-        media: [
-          { 
-            type: 'model', 
-            url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb', 
-            thumb: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=600&q=80',
-            caption: 'Interactive 3D view of the assembled lightbox mechanism.'
-          },
-          { 
-            type: 'image', 
-            src: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80', 
-            thumb: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=200&q=80',
-            caption: 'The final 3D printed assembly glowing in low light.'
-          },
-        ],
-        context: 'This was a gift I made for a friend. I wanted something cool that could be put on a desk, shelf, or counter-top for display. End result ended in a reaction of "One of the best gifts I\'ve ever gotten."',
-        challenge: 'Design a lightbox to display a lithophane portrait. Must be interchangeable, prevent light leakage from seemless openings.',
-        solution: 'Used SolidWorks to design the model, 3D printing to iterate. Developed a snap fit - to connect the two parts of the box - to prevent light leakage and visible seams on all sides. Made a track for lithophanes to be manually slid on for interchangeability. Designed a custom border for lithophanes to fit perfectly for the lightbox. Integrated electric components to activate LEDs when switch is pressed. The box design also allows for easy access to the battery pack, allowing for quick replacement of dead batteries.',
-        tags: ['SolidWorks', '3D Printing', 'Rapid Prototyping'],
-      },
-      {
-        id: 2,
         title: 'Assorted Prints',
         media: [
           { 
@@ -214,7 +193,17 @@ const projectData = {
         id: 1,
         title: 'Droid404 (Game)',
         media: [
-          { type: 'image', src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', caption: 'Gameplay screenshot showing level design.' },
+          { 
+            type: 'video', 
+            url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
+            caption: 'Official Gameplay Trailer'
+            // No thumb needed: it will auto-fetch from YouTube!
+          },
+          { 
+            type: 'image', 
+            src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', 
+            caption: 'Gameplay screenshot showing level design.' 
+          },
         ],
         context: 'This project was made during the 2020 Covid Pandemic with one of my closest friends. We worked many hours per day, balancing extracurriculars, school, and Droid404 for over 2 years until the day of the launch. Game link: https://store.steampowered.com/app/1663030/Droid404/',
         challenge: 'Develop a video game to publish on Steam, a virtual video game store.',
@@ -239,12 +228,26 @@ export default function ProjectsView({ category }) {
 
   const Icon = data.icon;
 
-  // Helper to pick a card preview
+  // Helper to pick a card preview with priority (Image > Model > Video)
   const getPreview = (project) => {
     const img = project.media?.find((m) => m.type === 'image');
     if (img) return img.src;
+    
     const model = project.media?.find((m) => m.type === 'model');
     if (model && model.thumb) return model.thumb;
+    
+    // Video thumbnail logic
+    const video = project.media?.find((m) => m.type === 'video');
+    if (video) {
+        if (video.thumb) return video.thumb;
+        // Basic extractor for preview
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const match = video.url?.match(regExp);
+        if (match && match[2].length === 11) {
+             return `https://img.youtube.com/vi/${match[2]}/hqdefault.jpg`;
+        }
+    }
+
     return 'https://via.placeholder.com/800x600?text=Project';
   };
 
@@ -365,11 +368,21 @@ export default function ProjectsView({ category }) {
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {project.media?.some((m) => m.type === 'model') && (
-                  <div className="absolute top-2 right-2 bg-[#00416B] text-white p-1.5 rounded-lg shadow-lg">
-                    <Box className="w-4 h-4" />
-                  </div>
-                )}
+                
+                {/* Type Badges */}
+                <div className="absolute top-2 right-2 flex gap-1">
+                    {project.media?.some((m) => m.type === 'model') && (
+                    <div className="bg-[#00416B] text-white p-1.5 rounded-lg shadow-lg">
+                        <Box className="w-4 h-4" />
+                    </div>
+                    )}
+                    {project.media?.some((m) => m.type === 'video') && (
+                    <div className="bg-red-600 text-white p-1.5 rounded-lg shadow-lg">
+                        <PlayCircle className="w-4 h-4" />
+                    </div>
+                    )}
+                </div>
+
                 {activeProject.id === project.id && (
                   <div className="absolute inset-0 bg-[#00416B]/80 flex items-center justify-center">
                     <span className="text-white font-bold text-sm tracking-widest uppercase">Viewing</span>
