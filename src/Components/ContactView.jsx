@@ -177,6 +177,7 @@ export default function ContactView() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-[#00416B] text-white rounded-full font-medium hover:bg-[#00416B]/90 transition-all duration-300 shadow-lg shadow-[#00416B]/20"
+                title="Send via Gmail"
               >
                 <Mail className="w-5 h-5" />
                 Send Email
