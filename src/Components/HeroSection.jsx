@@ -107,7 +107,7 @@ export default function HeroSection() {
             >
               {[
                 { value: '3', label: 'Engineering Positions Held' },
-                { value: '4+', label: 'Projects Completed' },
+                { value: '5', label: 'Projects Completed' },
                 { value: '10+', label: 'Years Involved in Robotics' },
               ].map((stat, index) => (
                 <div key={index}>
