@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 import MediaCarousel from './MediaCarousel';
 
-// --- Helper Component: Expandable Text ---
+// --- Helper Component: Expandable Text (Optimized for Performance) ---
 const ExpandableText = ({ text, limit = 250 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -23,29 +23,28 @@ const ExpandableText = ({ text, limit = 250 }) => {
   const shouldTruncate = text.length > limit;
 
   return (
-    <div className="relative">
-      <motion.div
-        initial={false}
-        animate={{ 
-          height: isExpanded || !shouldTruncate ? "auto" : 72 // ~3 lines (24px line-height * 3)
-        }}
-        transition={{ duration: 0.4, ease: "easeInOut" }}
-        className="overflow-hidden relative"
+    <div className="relative group">
+      <div 
+        className={`relative overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+          // We animate max-height instead of height. 
+          // 72px is roughly 3 lines. 1000px is "big enough" to fit all text.
+          isExpanded ? 'max-h-[1000px]' : 'max-h-[72px]'
+        }`}
       >
-        <p className="text-[#00416B]/80 leading-relaxed">
+        <p className="text-[#00416B]/80 leading-relaxed pb-2">
           {text}
         </p>
         
-        {/* Optional: Add a subtle fade-out gradient when collapsed */}
-        {!isExpanded && shouldTruncate && (
-          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent" />
-        )}
-      </motion.div>
+        {/* Gradient Fade - Only visible when collapsed */}
+        <div className={`absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent transition-opacity duration-300 ${
+          isExpanded || !shouldTruncate ? 'opacity-0 pointer-events-none' : 'opacity-100'
+        }`} />
+      </div>
 
       {shouldTruncate && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="mt-2 text-xs font-bold text-[#00416B] hover:text-[#00416B]/70 flex items-center gap-1 uppercase tracking-wider transition-colors"
+          className="mt-2 text-xs font-bold text-[#00416B] hover:text-[#00416B]/70 flex items-center gap-1 uppercase tracking-wider transition-colors focus:outline-none"
         >
           {isExpanded ? (
             <>Read Less <ChevronUp className="w-3 h-3" /></>
@@ -57,6 +56,7 @@ const ExpandableText = ({ text, limit = 250 }) => {
     </div>
   );
 };
+
 // --- Updated Project Data with Videos & Captions ---
 const projectData = {
   '3d-modeling': {
