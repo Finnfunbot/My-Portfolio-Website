@@ -139,13 +139,13 @@ const projectData = {
         media: [
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
-            caption: '3D Printed version of the wheel' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: '3D model of the wheel' 
           },
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
-            caption: '3D model of the wheel' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
+            caption: '3D Printed version of the wheel' 
           },
           { 
             type: 'model', 
@@ -314,15 +314,11 @@ const projectData = {
           },
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568395/Library_Capsule_acr9qp.png',
-          },
-          { 
-            type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568395/Logo_New_2_Bright_ohcfl4.png',
           },
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568396/Small_Capsule_cw83aw.jpg',
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568395/Library_Capsule_acr9qp.png',
           },
         ],
         context: 'This project was made during the 2020 Covid Pandemic with one of my closest friends. We worked many hours per day, balancing extracurriculars, school, and Droid404 for over 2 years until the day of the launch. Game link: https://store.steampowered.com/app/1663030/Droid404/',
