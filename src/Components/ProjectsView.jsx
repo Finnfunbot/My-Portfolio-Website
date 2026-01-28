@@ -44,15 +44,6 @@ const ExpandableText = ({ text, limit = 250 }) => {
   );
 };
 
-/* for video:
-          { 
-            type: 'video', 
-            url: 'https://www.yout-ube.com/watch?v=dQw4w9WgXcQ', // Replace with your actual trailer URL 
-            caption: 'Official Gameplay Trailer'
-            // No thumb needed: it will auto-fetch from YouTube!
-          },
-*/
-
 // --- Updated Project Data with Videos & Captions ---
 const projectData = {
   '3d-modeling': {
@@ -74,19 +65,16 @@ const projectData = {
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6228_uo5pnt',
-            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6253_bqmvpy',
-            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/IMG_6252_hjprtj',
-            //caption: 'The final 3D printed assembly glowing in low light.'
           },
           { 
             type: 'image', 
@@ -102,7 +90,7 @@ const projectData = {
           },
           { 
             type: 'model', 
-            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545401/Lightbox_Ass2_vthbbr.glb', //https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/ToyCar/glTF-Binary/ToyCar.glb
+            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545401/Lightbox_Ass2_vthbbr.glb', 
             thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769545378/Lightbox_SS_a65guy.png',
             caption: 'Interactive 3D view of the assembled lightbox mechanism.'
           },
@@ -121,11 +109,6 @@ const projectData = {
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
             caption: '3D model of the wheel' 
           },
-          /*{ 
-            type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
-            caption: 'Wheel traction testing in simulated regolith sand.' 
-          },*/
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
@@ -159,11 +142,6 @@ const projectData = {
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
             caption: '3D Printed version of the wheel' 
           },
-          /*{ 
-            type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
-            caption: 'Wheel traction testing in simulated regolith sand.' 
-          },*/
           { 
             type: 'image', 
             src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
@@ -280,17 +258,17 @@ const projectData = {
         media: [
           { 
             type: 'video', 
-            url: 'https://youtube.com/shorts/EN_YbPMsDqY?feature=share', // Replace with your actual trailer URL 
+            url: 'https://youtube.com/shorts/EN_YbPMsDqY?feature=share', 
             caption: 'Car activates at a certain light level, using only hardware components'
           },
           { 
             type: 'video', 
-            url: 'https://youtube.com/shorts/vnJZplO5hbY?feature=share', // Replace with your actual trailer URL 
+            url: 'https://youtube.com/shorts/vnJZplO5hbY?feature=share', 
             caption: 'Car activates at a certain light level, using an Arduino and CDS Cell'
           },
           { 
             type: 'video', 
-            url: 'https://youtube.com/shorts/ZLOec-UKCGI?feature=share', // Replace with your actual trailer URL 
+            url: 'https://youtube.com/shorts/ZLOec-UKCGI?feature=share', 
             caption: 'Car gets input with an Ultrasonic sensor, connects to an arduino, and turns when it detects an object at a certain distance in front of it'
           },
         ],
@@ -304,13 +282,13 @@ const projectData = {
         title: 'Sun Tracking Solar Panel',
         media: [
           { 
-            type: 'model', 
-            url: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
-            thumb: 'https://images.unsplash.com/photo-1535378437832-3815b40acd5e?w=600&q=80' 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769567901/Screenshot_2026-01-27_at_9.36.01_PM_fnsawv.png'
           },
           { 
-            type: 'image', 
-            src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80' 
+            type: 'video', 
+            url: 'https://youtu.be/0sGOAOLSuY8', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769567901/Screenshot_2026-01-27_at_9.36.01_PM_fnsawv.png' 
           },
         ],
         context: 'This was a project given during a 2-week summer course at UMass Amherst, before I enrolled as a student. I was part a group of 4 students and an instuctor. We wanted to prove the feasbility of the concept and potentially apply it on a larger scale to test results.',
@@ -329,6 +307,11 @@ const projectData = {
         id: 1,
         title: 'Droid404 (Game)',
         media: [
+          { 
+            type: 'video', 
+            url: 'https://www.youtube.com/shorts/dQw4w9WgXcQ', 
+            caption: 'Official Gameplay Trailer'
+          },
           { 
             type: 'image', 
             src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', 
@@ -358,27 +341,34 @@ export default function ProjectsView({ category }) {
 
   const Icon = data.icon;
 
-  // Helper to pick a card preview with priority (Image > Model > Video)
+  // --- UPDATED: getPreview function ---
   const getPreview = (project) => {
+    // 1. PRIORITY: Check for explicit project thumbnail first
+    if (project.thumbnail) return project.thumbnail;
+
+    // 2. Look for a static Image
     const img = project.media?.find((m) => m.type === 'image');
     if (img) return img.src;
-    
-    const model = project.media?.find((m) => m.type === 'model');
-    if (model && model.thumb) return model.thumb;
-    
-    // Video thumbnail logic
+
+    // 3. Look for a Video (Auto-fetch YouTube or use video thumb)
     const video = project.media?.find((m) => m.type === 'video');
     if (video) {
         if (video.thumb) return video.thumb;
-        // Basic extractor for preview
-        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+
+        const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
         const match = video.url?.match(regExp);
         if (match && match[2].length === 11) {
-             return `https://img.youtube.com/vi/${match[2]}/hqdefault.jpg`;
+             return `https://img.youtube.com/vi/${match[2]}/mqdefault.jpg`; 
         }
+        return 'https://via.placeholder.com/800x600/00416B/FFFFFF?text=Video+Project';
     }
 
-    return 'https://via.placeholder.com/800x600?text=Project';
+    // 4. Look for Model thumb
+    const model = project.media?.find((m) => m.type === 'model');
+    if (model && model.thumb) return model.thumb;
+
+    // 5. Fallback
+    return 'https://via.placeholder.com/800x600?text=No+Preview';
   };
 
   return (
