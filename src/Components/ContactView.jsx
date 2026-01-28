@@ -45,8 +45,11 @@ export default function ContactView() {
                   <h3 className="text-lg font-bold text-[#00416B] mb-1">Email</h3>
                   <p className="text-[#00416B]/60 text-sm mb-3">Preferred contact method</p>
                   <a
-                    href="mailto:engineer@example.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=gregory@simonefamily.net"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#00416B] font-medium hover:underline"
+                    title="Open in Gmail"
                   >
                     gregory@simonefamily.net
                   </a>
@@ -67,7 +70,7 @@ export default function ContactView() {
                   <h3 className="text-lg font-bold text-[#00416B] mb-1">Phone</h3>
                   <p className="text-[#00416B]/60 text-sm mb-3">Mon-Fri, 9AM-6PM EST</p>
                   <a
-                    href="tel:+14155551234"
+                    href="tel:+15085071526"
                     className="text-[#00416B] font-medium hover:underline"
                   >
                     +1 (508) 507-1526
@@ -146,7 +149,6 @@ export default function ContactView() {
 
             {/* Services */}
             <div className="bg-white rounded-3xl p-8 shadow-xl shadow-[#00416B]/5 border border-[#00416B]/5">
-              {/* <div className="bg-gradient-to-br from-[#00416B] to-[#00416B]/50 rounded-3xl p-8 border border-[#00416B]/5"> {/* Original 2 were: F1EAD6  */}
               <h3 className="text-xl font-bold text-[#00416B] mb-6">How I Can Help</h3>
               <ul className="space-y-3">
                 {[
@@ -172,8 +174,10 @@ export default function ContactView() {
                 For internships or job opportunities, please reach out 
                 via email and I will get back to you soon.
               </p>
+              
+              {/* UPDATED: Gmail Direct Link with Subject Line */}
               <a
-                href="mailto:gregory@simonefamily.net?subject=Project%20Inquiry"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=gregory@simonefamily.net&su=Project%20Inquiry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-[#00416B] text-white rounded-full font-medium hover:bg-[#00416B]/90 transition-all duration-300 shadow-lg shadow-[#00416B]/20"
