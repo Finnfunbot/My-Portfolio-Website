@@ -21,13 +21,27 @@ const ExpandableText = ({ text, limit = 250 }) => {
   if (!text) return null;
   
   const shouldTruncate = text.length > limit;
-  const displayText = isExpanded || !shouldTruncate ? text : text.slice(0, limit) + '...';
 
   return (
-    <div>
-      <p className="text-[#00416B]/80 leading-relaxed transition-all duration-300">
-        {displayText}
-      </p>
+    <div className="relative">
+      <motion.div
+        initial={false}
+        animate={{ 
+          height: isExpanded || !shouldTruncate ? "auto" : 72 // ~3 lines (24px line-height * 3)
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="overflow-hidden relative"
+      >
+        <p className="text-[#00416B]/80 leading-relaxed">
+          {text}
+        </p>
+        
+        {/* Optional: Add a subtle fade-out gradient when collapsed */}
+        {!isExpanded && shouldTruncate && (
+          <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent" />
+        )}
+      </motion.div>
+
       {shouldTruncate && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
@@ -43,7 +57,6 @@ const ExpandableText = ({ text, limit = 250 }) => {
     </div>
   );
 };
-
 // --- Updated Project Data with Videos & Captions ---
 const projectData = {
   '3d-modeling': {
