@@ -118,8 +118,8 @@ const projectData = {
         media: [
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
-            caption: '3D Printed version of the wheel' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: '3D model of the wheel' 
           },
           /*{ 
             type: 'image', 
@@ -128,8 +128,8 @@ const projectData = {
           },*/
           { 
             type: 'image', 
-            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
-            caption: '3D model of the wheel' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
+            caption: '3D Printed version of the wheel' 
           },
           { 
             type: 'model', 
