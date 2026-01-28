@@ -18,7 +18,7 @@ export default function Navigation({ currentView, setCurrentView }) {
   const projectItems = [
     { id: '3d-modeling', label: '3D Modeling', icon: Box },
     { id: '3d-printing', label: '3D Printing', icon: Printer },
-    { id: 'fea', label: 'FEA Analysis', icon: Activity },
+    //{ id: 'fea', label: 'FEA Analysis', icon: Activity },
     { id: 'electrical', label: 'Electrical', icon: Cpu },
     { id: 'other', label: 'Other Projects', icon: FolderOpen },
   ];
