@@ -20,7 +20,7 @@ export default function ContactView() {
             Let's Work Together
           </h1>
           <p className="text-[#00416B]/70 max-w-2xl mx-auto text-lg">
-            Are you looking for an engineering intern? I'd love to hear about it!
+            Are you looking for an Engineering Intern? I'd love to hear about it!
           </p>
         </motion.div>
 
@@ -177,7 +177,7 @@ export default function ContactView() {
               
               {/* UPDATED: Gmail Direct Link with Subject Line */}
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=gregory@simonefamily.net&su=Project%20Inquiry"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=gregory@simonefamily.net&su=Website%20Message"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3 bg-[#00416B] text-white rounded-full font-medium hover:bg-[#00416B]/90 transition-all duration-300 shadow-lg shadow-[#00416B]/20"
