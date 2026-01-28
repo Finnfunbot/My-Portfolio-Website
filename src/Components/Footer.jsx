@@ -71,12 +71,17 @@ export default function Footer({ setCurrentView }) {
             >
               <Linkedin className="w-5 h-5" />
             </a>
+            
+            {/* UPDATED EMAIL LINK */}
             <a
               href="mailto:gregory@simonefamily.net"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
             >
               <Mail className="w-5 h-5" />
             </a>
+
             <motion.button
               onClick={scrollToTop}
               whileHover={{ y: -3 }}
