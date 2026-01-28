@@ -72,12 +72,13 @@ export default function Footer({ setCurrentView }) {
               <Linkedin className="w-5 h-5" />
             </a>
             
-            {/* UPDATED EMAIL LINK */}
+            {/* UPDATED: Forces Gmail Compose Window in New Tab */}
             <a
-              href="mailto:gregory@simonefamily.net"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=gregory@simonefamily.net"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              title="Send via Gmail"
             >
               <Mail className="w-5 h-5" />
             </a>
