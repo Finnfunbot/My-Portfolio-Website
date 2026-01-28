@@ -17,24 +17,25 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
     setIsInteracting(false);
   };
 
-  // 1. Helper: Detect if URL is YouTube
+  // --- UPDATED: YouTube ID Extractor (Now supports Shorts) ---
   const getYouTubeId = (url) => {
     if (!url) return null;
-    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    // Added 'shorts/' to the regex pattern
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
     const match = url.match(regExp);
     return (match && match[2].length === 11) ? match[2] : null;
   };
 
-  // 2. Helper: Check if it's a direct video file (MP4/WebM)
+  // Helper: Check if it's a direct video file (MP4/WebM)
   const isDirectVideo = (url) => {
     return url?.match(/\.(mp4|webm|ogg)$/i);
   };
 
-  // 3. Helper: Smart Thumbnailer
+  // Helper: Smart Thumbnailer
   const getThumbnail = (item) => {
     if (item.thumb) return item.thumb;
     
-    // Auto-fetch YouTube thumb
+    // Auto-fetch YouTube thumb (Works for Shorts too!)
     const ytId = getYouTubeId(item.url);
     if (item.type === 'video' && ytId) {
       return `https://img.youtube.com/vi/${ytId}/maxresdefault.jpg`;
@@ -56,7 +57,6 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
 
   const active = media[index];
   const ytId = active.type === 'video' ? getYouTubeId(active.url) : null;
-  const isDirectVid = active.type === 'video' ? isDirectVideo(active.url) : null;
 
   const prev = () => handleSlideChange((index - 1 + media.length) % media.length);
   const next = () => handleSlideChange((index + 1) % media.length);
@@ -108,7 +108,7 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
                   key={active.url}
                   url={active.url}
                   placeholderSrc={active.thumb}
-                  autoRotate={false}
+                  autoRotate={true}
                   autoRotateSpeed={0.5}
                   width="100%"
                   height="100%"
@@ -134,12 +134,11 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
           <div className="w-full h-full relative flex items-center justify-center">
             {isInteracting ? (
               <>
-                {/* 1. YOUTUBE PLAYER */}
+                {/* 1. YOUTUBE PLAYER (Supports Shorts) */}
                 {ytId && (
                   <iframe
                     width="100%"
                     height="100%"
-                    // Using youtube-nocookie and optimized params
                     src={`https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&modestbranding=1&rel=0&iv_load_policy=3&playsinline=1`}
                     title="YouTube video player"
                     frameBorder="0"
@@ -150,7 +149,6 @@ export default function MediaCarousel({ media = [], initialIndex = 0, className 
                 )}
 
                 {/* 2. DIRECT FILE PLAYER (.mp4) */}
-                {/* Clean, Ad-Free HTML5 Player */}
                 {!ytId && (
                   <video 
                     controls 
