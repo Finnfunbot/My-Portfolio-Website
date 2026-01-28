@@ -248,7 +248,7 @@ const projectData = {
       },
     ],
   },
-  /*fea: {
+  fea: {
     title: 'Finite Element Analysis',
     description: 'Advanced simulation and analysis ensuring structural integrity and optimal performance.',
     icon: Activity,
@@ -269,7 +269,7 @@ const projectData = {
         tags: ['ANSYS', 'SolidWorks', 'Testing'],
       },
     ],
-  },*/
+  },
   electrical: {
     title: 'Electrical Projects',
     icon: Cpu,
