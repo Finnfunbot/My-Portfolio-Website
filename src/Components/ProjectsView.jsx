@@ -150,8 +150,39 @@ const projectData = {
     description: 'Additive manufacturing solutions pushing the boundaries of design freedom and rapid prototyping.',
     icon: Printer,
     projects: [
-      {
+       {
         id: 1,
+        title: 'Lunar Rover (WIP)',
+        media: [
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769558272/copy_of_img_6396_owq6rl_dc9b58.jpg', 
+            caption: '3D Printed version of the wheel' 
+          },
+          /*{ 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: 'Wheel traction testing in simulated regolith sand.' 
+          },*/
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png', 
+            caption: '3D model of the wheel' 
+          },
+          { 
+            type: 'model', 
+            url: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556399/Curvy_Wheel_ssxe5z.glb', 
+            thumb: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769556411/Screenshot_2026-01-27_182532_thopwb.png',
+            caption: 'Chassis design v2.4 showing suspension mounting points.'
+          },
+        ],
+        context: 'Working in UMass ASME chapter for this project. Currently the co-captain for the chassis sub-team.',
+        challenge: 'Develop a lunar rover for an upcoming NASA sponsored competition. Devlop wheels to support 20+kg of weight per tire. Needs to have traction on loose terrain. ',
+        solution: '3D model and iterate wheel designs. 3D printed models to test and iterate based on results.',
+        tags: ['SolidWorks', 'Gear Design', 'Tolerancing'],
+      },
+      {
+        id: 2,
         title: 'Assorted Hobby Prints',
         media: [
           { 
@@ -217,7 +248,7 @@ const projectData = {
       },
     ],
   },
-  fea: {
+  /*fea: {
     title: 'Finite Element Analysis',
     description: 'Advanced simulation and analysis ensuring structural integrity and optimal performance.',
     icon: Activity,
@@ -238,7 +269,7 @@ const projectData = {
         tags: ['ANSYS', 'SolidWorks', 'Testing'],
       },
     ],
-  },
+  },*/
   electrical: {
     title: 'Electrical Projects',
     icon: Cpu,
@@ -248,19 +279,25 @@ const projectData = {
         title: 'Robotic Car',
         media: [
           { 
-            type: 'model', 
-            url: 'https://res.cloudinary.com/dwrts9bjq/raw/upload/v1765767653/Car_ptg3re.stl', 
-            thumb: 'https://images.unsplash.com/photo-1535378437832-3815b40acd5e?w=600&q=80' 
+            type: 'video', 
+            url: 'https://youtube.com/shorts/EN_YbPMsDqY?feature=share', // Replace with your actual trailer URL 
+            caption: 'Car activates at a certain light level, using only hardware components'
           },
           { 
-            type: 'image', 
-            src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80' 
+            type: 'video', 
+            url: 'https://youtube.com/shorts/vnJZplO5hbY?feature=share', // Replace with your actual trailer URL 
+            caption: 'Car activates at a certain light level, using an Arduino and CDS Cell'
+          },
+          { 
+            type: 'video', 
+            url: 'https://youtube.com/shorts/ZLOec-UKCGI?feature=share', // Replace with your actual trailer URL 
+            caption: 'Car gets input with an Ultrasonic sensor, connects to an arduino, and turns when it detects an object at a certain distance in front of it'
           },
         ],
         context: 'This project was assigned in UMass course: ECE 361 - Fundamentals to Electrical Engineering. We were given all the supplies needed and lecture slides to complete tasks given, 1 assignment every 1-2 weeks. This project was primarily to apply what we learned in lecture to real life solutions as well as to inspire students to pursue additional projects of the same nature. I became a Teaching Assistant the following year for this course, mentoring students on the concepts and applications taught in this course.',
         challenge: 'Create a car to complete criteria for ECE 361 course at UMass Amherst',
         solution: 'Used purly hardware to design the car to move depending on light levels in the environment. Used transitiors, resistors, op-amps, motors and breadboards for this task. Later assignments utilized an Arduino and ultrasonic sensors to add a further challenge to the tasks.',
-        tags: ['Circuitry', 'Problem Solving'],
+        tags: ['Circuitry', 'Problem Solving', 'Arduino'],
       },
       {
         id: 2,
