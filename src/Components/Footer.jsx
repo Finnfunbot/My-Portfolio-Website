@@ -73,6 +73,7 @@ export default function Footer({ setCurrentView }) {
             </a>
             <a
               href="mailto:gregory@simonefamily.net"
+              rel="noopener noreferrer"
               className="p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
             >
               <Mail className="w-5 h-5" />
