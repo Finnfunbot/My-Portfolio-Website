@@ -309,13 +309,20 @@ const projectData = {
         media: [
           { 
             type: 'video', 
-            url: 'https://www.youtube.com/shorts/dQw4w9WgXcQ', 
+            url: 'https://www.youtube.com/watch?v=PliQHKdRDYc', 
             caption: 'Official Gameplay Trailer'
           },
           { 
             type: 'image', 
-            src: 'https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=1200&q=80', 
-            caption: 'Gameplay screenshot showing level design.' 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568395/Library_Capsule_acr9qp.png',
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568395/Logo_New_2_Bright_ohcfl4.png',
+          },
+          { 
+            type: 'image', 
+            src: 'https://res.cloudinary.com/drjhgqwur/image/upload/v1769568396/Small_Capsule_cw83aw.jpg',
           },
         ],
         context: 'This project was made during the 2020 Covid Pandemic with one of my closest friends. We worked many hours per day, balancing extracurriculars, school, and Droid404 for over 2 years until the day of the launch. Game link: https://store.steampowered.com/app/1663030/Droid404/',
